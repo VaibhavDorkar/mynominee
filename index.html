@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MyNominee.In | Caring Beyond Life</title>
+  <meta
+    name="description"
+    content="MyNominee helps families organize important financial information and nominee details."
+  >
+
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Original loader asset -->
+  <div id="pageLoader" class="page-loader">
+    <div class="text-center">
+      <img
+        src="images/loader.gif"
+        alt="Loading MyNominee"
+        class="loader-image"
+      >
+      <p class="loader-caption">
+        <i class="bi bi-heart-fill"></i>
+        Caring Beyond Life...
+      </p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+
+<nav class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top">
+  <div class="container">
+
+    <!-- Brand -->
+    <a class="navbar-brand" href="index.html" aria-label="MyNomini home">
+      <img
+        src="images/logo.png"
+        alt=""
+        class="brand-logo"
+      />
+      <img
+        src="images/mynominee-brand-text.svg"
+        alt="MyNomini.IN"
+        class="brand-text"
+      />
+    </a>
+
+    <!-- Mobile toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar"
+      aria-expanded="false"
+      aria-label="Open navigation menu"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation links -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="index.html"
+             data-page="home">
+            Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="analysis.html"
+             data-page="analysis">
+            Statistical Analysis
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="index.html#about"
+             data-page="about">
+            About
+          </a>
+        </li>
+
+        <li class="nav-item nav-cta-item">
+          <a class="nav-cta" href="analysis.html">
+            Explore Analysis
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero-section">
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
+
+      <div class="container position-relative">
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-7">
+
+            
+
+            <h1 class="hero-title">
+              Your family's future
+              <span>deserves clarity.</span>
+            </h1>
+
+            <p class="hero-description">
+              Important financial information should never become a mystery
+              for the people you love. MyNominee encourages families to
+              organize essential financial details and nominee information
+              with greater awareness and care.
+            </p>
+
+            <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+              <a href="#how-it-works" class="btn btn-brand btn-lg">
+                Discover MyNominee
+                <i class="bi bi-arrow-right ms-2"></i>
+              </a>
+
+              <a href="analysis.html" class="btn btn-outline-brand btn-lg">
+                Open Analysis Workspace
+              </a>
+            </div>
+
+            <div class="hero-trust-row mt-4">
+              <span>
+                <i class="bi bi-heart-fill"></i>
+                Family-first awareness
+              </span>
+              <span>
+                <i class="bi bi-shield-check"></i>
+                Privacy-conscious design
+              </span>
+            </div>
+
+          </div>
+
+          <!-- Hero visual -->
+          <div class="col-lg-5">
+            <div class="hero-visual-card">
+
+              <div class="visual-topline">
+                <span class="visual-icon">
+                  <i class="bi bi-house-heart"></i>
+                </span>
+                
+                  
+                </span>
+              </div>
+
+              <h2 class="visual-heading">
+                A little preparation.
+                <br>
+                A lasting difference.
+              </h2>
+
+              <p class="visual-description">
+                Help your loved ones understand where important information
+                belongs and why keeping it organized matters.
+              </p>
+
+              <div class="prepared-item">
+                <span class="prepared-icon">
+                  <i class="bi bi-bank"></i>
+                </span>
+                <span>
+                  <strong>Financial assets</strong>
+                  <small>Know what exists</small>
+                </span>
+                <i class="bi bi-check-circle-fill prepared-check"></i>
+              </div>
+
+              <div class="prepared-item">
+                <span class="prepared-icon">
+                  <i class="bi bi-people"></i>
+                </span>
+                <span>
+                  <strong>Nominee awareness</strong>
+                  <small>Know who is recorded</small>
+                </span>
+                <i class="bi bi-check-circle-fill prepared-check"></i>
+              </div>
+
+              <div class="prepared-item">
+                <span class="prepared-icon">
+                  <i class="bi bi-folder2-open"></i>
+                </span>
+                <span>
+                  <strong>Important records</strong>
+                  <small>Know where to find them</small>
+                </span>
+                <i class="bi bi-check-circle-fill prepared-check"></i>
+              </div>
+
+              <div class="visual-footer">
+                <i class="bi bi-heart-fill"></i>
+                Caring beyond a lifetime
+              </div>
+
+              <div class="floating-decoration decoration-one">
+                <i class="bi bi-stars"></i>
+              </div>
+
+              <div class="floating-decoration decoration-two">
+                <i class="bi bi-heart-fill"></i>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Why it matters -->
+    <section id="why-it-matters" class="section-padding">
+      <div class="container">
+
+        <div class="section-heading text-center mx-auto">
+          <span class="section-kicker">WHY IT MATTERS</span>
+          <h2>Preparedness is an act of care.</h2>
+          <p>
+            Families can face avoidable confusion when essential financial
+            information is scattered, forgotten, or difficult to locate.
+            Awareness is a practical first step.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+
+          <div class="col-md-4">
+            <article class="feature-card h-100">
+              <div class="feature-icon icon-teal">
+                <i class="bi bi-collection"></i>
+              </div>
+              <h3>Bring information together</h3>
+              <p>
+                Understand which financial records and account details
+                your family may need to keep track of.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="feature-card h-100">
+              <div class="feature-icon icon-peach">
+                <i class="bi bi-person-check"></i>
+              </div>
+              <h3>Understand nominee details</h3>
+              <p>
+                Encourage families to review nominee information and
+                understand the importance of keeping records current.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="feature-card h-100">
+              <div class="feature-icon icon-lavender">
+                <i class="bi bi-chat-heart"></i>
+              </div>
+              <h3>Start meaningful conversations</h3>
+              <p>
+                Make financial preparedness easier to discuss with
+                the people who matter most.
+              </p>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how-it-works" class="section-padding section-soft">
+      <div class="container">
+
+        <div class="section-heading text-center mx-auto">
+          <span class="section-kicker">A SIMPLE START</span>
+          <h2>Make preparedness a habit.</h2>
+          <p>
+            Start with awareness, identify what needs attention, and
+            build a clearer picture of your family's essential records.
+          </p>
+        </div>
+
+        <div class="row g-4 mt-3">
+
+          <div class="col-md-4">
+            <div class="step-card">
+              <span class="step-number">01</span>
+              <h3>Understand</h3>
+              <p>
+                Identify the financial information and records your
+                family should know about.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="step-card">
+              <span class="step-number">02</span>
+              <h3>Organize</h3>
+              <p>
+                Establish a clear way to keep track of relevant
+                documents and nominee details.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="step-card">
+              <span class="step-number">03</span>
+              <h3>Review</h3>
+              <p>
+                Revisit important details periodically and discuss
+                changes with your family.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Analysis entry -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="analysis-banner">
+
+          <div>
+            <span class="section-kicker">STATISTICAL ANALYSIS</span>
+            <h2>Turn your dataset into meaningful insights.</h2>
+            <p>
+              Open the analysis workspace to inspect your data,
+              review data quality, and work with statistical tests.
+            </p>
+          </div>
+
+          <a href="analysis.html" class="btn btn-light btn-lg analysis-cta">
+            Open Workspace
+            <i class="bi bi-arrow-up-right ms-2"></i>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision -->
+    <section id="our-vision" class="section-padding vision-section">
+      <div class="container text-center">
+
+        <div class="vision-symbol">
+          <i class="bi bi-heart-fill"></i>
+        </div>
+
+        <span class="section-kicker">OUR VISION</span>
+
+        <h2>
+          Caring for your family
+          <span>goes beyond a lifetime.</span>
+        </h2>
+
+        <p class="vision-description mx-auto">
+          We envision a future where families are more informed,
+          important financial records are easier to understand,
+          and preparedness becomes a natural part of caring for one another.
+        </p>
+
+        <a href="analysis.html" class="btn btn-brand mt-3">
+          Explore the Workspace
+          <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+
+
+<footer class="site-footer" id="site-footer">
+  <div class="container">
+
+    <!-- Main footer -->
+    <div class="footer-main">
+
+      <!-- Brand column -->
+      <div class="footer-brand-column">
+        <a href="index.html" class="footer-brand-link"
+           aria-label="MyNomini.IN home">
+          <img src="images/logo.png"
+               alt=""
+               class="footer-logo">
+
+          <img src="images/mynominee-brand-text.svg"
+               alt="MyNomini.IN"
+               class="footer-brand-text">
+        </a>
+
+        <p class="footer-description">
+          Turn your data into meaningful insights with an
+          accessible workspace for statistical analysis.
+        </p>
+
+        
+      </div>
+
+      <!-- Navigation -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="analysis.html">Statistical Analysis</a></li>
+          <li><a href="index.html#about">About</a></li>
+        </ul>
+      </div>
+
+      <!-- Workspace -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Workspace</h3>
+        <ul class="footer-links">
+          <li><a href="analysis.html">Upload a dataset</a></li>
+          <li><a href="analysis.html#dataset-overview">Dataset overview</a></li>
+        </ul>
+      </div>
+
+      <!-- Project information -->
+      <div class="footer-column footer-info-column">
+        <h3 class="footer-heading">About this project</h3>
+        <p class="footer-info-text">
+          Designed to make dataset exploration and statistical
+          workflows easier to understand.
+        </p>
+        <a href="index.html#about" class="footer-text-link">
+          Learn more <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Capability notice -->
+   
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        © <span id="footerYear"></span> MyNomini.IN
+        <span class="footer-copyright-divider">·</span>
+        All rights reserved.
+      </p>
+
+      <a href="#top" class="footer-back-to-top">
+        Back to top <span aria-hidden="true">↑</span>
+      </a>
+    </div>
+
+  </div>
+</footer>
+
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  ></script>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

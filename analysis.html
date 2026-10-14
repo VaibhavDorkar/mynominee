@@ -1,0 +1,524 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Statistical Analysis | MyNominee.In</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet"
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/analysis.css">
+</head>
+
+<body class="analysis-page">
+
+  <!-- Navbar -->
+  
+
+<nav class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top">
+  <div class="container">
+
+    <!-- Brand -->
+    <a class="navbar-brand" href="index.html" aria-label="MyNomini home">
+      <img
+        src="images/logo.png"
+        alt=""
+        class="brand-logo"
+      />
+      <img
+        src="images/mynominee-brand-text.svg"
+        alt="MyNomini.IN"
+        class="brand-text"
+      />
+    </a>
+
+    <!-- Mobile toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar"
+      aria-expanded="false"
+      aria-label="Open navigation menu"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation links -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="index.html"
+             data-page="home">
+            Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="analysis.html"
+             data-page="analysis">
+            Statistical Analysis
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             href="index.html#about"
+             data-page="about">
+            About
+          </a>
+        </li>
+
+        <li class="nav-item nav-cta-item">
+          <a class="nav-cta" href="analysis.html">
+            Explore Analysis
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <main class="analysis-main">
+    <div class="container">
+
+      <!-- Page heading -->
+      <section class="analysis-heading">
+        
+
+        <h1>
+          Understand your data.
+          <span>Make informed decisions.</span>
+        </h1>
+
+        <p>
+          Upload a dataset to inspect its structure, identify missing values,
+          preview observations, and prepare a statistical analysis.
+        </p>
+      </section>
+
+      <!-- Upload card -->
+      <section id="upload-section" class="workspace-card">
+
+        <div class="workspace-card-heading">
+          <div class="workspace-icon">
+            <i class="bi bi-file-earmark-spreadsheet"></i>
+          </div>
+
+          <div>
+            <h2>Upload your dataset</h2>
+            <p>Choose a CSV or Excel file to get started.</p>
+          </div>
+        </div>
+
+        <div
+          id="dropZone"
+          class="upload-dropzone"
+          role="button"
+          tabindex="0"
+          aria-label="Choose a CSV or Excel dataset"
+        >
+          <input
+            type="file"
+            id="datasetFile"
+            accept=".csv,.xlsx,.xls"
+            hidden
+          >
+
+          <div class="upload-icon">
+            <i class="bi bi-cloud-arrow-up"></i>
+          </div>
+
+          <h3>Drop your dataset here</h3>
+
+          <p>
+            or
+            <button type="button" id="browseButton" class="browse-link">
+              browse files
+            </button>
+          </p>
+
+          <div class="upload-formats">
+            <span>CSV</span>
+            <span>XLSX</span>
+            <span>XLS</span>
+          </div>
+
+          <small>Choose a dataset you are authorized to use.</small>
+        </div>
+
+        <div id="uploadStatus" class="upload-status" aria-live="polite"></div>
+
+        <div id="selectedFile" class="selected-file d-none">
+          <div class="selected-file-icon">
+            <i class="bi bi-file-earmark-check"></i>
+          </div>
+
+          <div class="selected-file-info">
+            <strong id="fileName">dataset.csv</strong>
+            <small id="fileSize">0 KB</small>
+          </div>
+
+          <button
+            type="button"
+            id="removeFile"
+            class="remove-file"
+            aria-label="Remove selected dataset"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <div class="upload-actions">
+          <button
+            type="button"
+            id="analyzeButton"
+            class="btn btn-brand"
+            disabled
+          >
+            <i class="bi bi-bar-chart-line me-2"></i>
+            Inspect Dataset
+          </button>
+
+          <button
+            type="button"
+            id="resetButton"
+            class="btn btn-outline-brand"
+          >
+            Reset
+          </button>
+        </div>
+
+      </section>
+
+      <!-- Dataset overview -->
+      <section id="datasetOverview" class="d-none">
+
+        <div class="results-heading">
+          <div>
+            <span class="section-kicker">DATASET OVERVIEW</span>
+            <h2>Your data at a glance</h2>
+            <p id="datasetDescription">Dataset inspection summary</p>
+          </div>
+
+          <span class="dataset-ready">
+            <i class="bi bi-check-circle-fill me-1"></i>
+            File loaded
+          </span>
+        </div>
+
+        <div class="row g-3 summary-grid">
+
+          <div class="col-6 col-xl-3">
+            <article class="summary-card">
+              <div class="summary-card-icon">
+                <i class="bi bi-list-ol"></i>
+              </div>
+              <p>Observations</p>
+              <h3 id="rowCount">—</h3>
+            </article>
+          </div>
+
+          <div class="col-6 col-xl-3">
+            <article class="summary-card">
+              <div class="summary-card-icon">
+                <i class="bi bi-columns-gap"></i>
+              </div>
+              <p>Variables</p>
+              <h3 id="columnCount">—</h3>
+            </article>
+          </div>
+
+          <div class="col-6 col-xl-3">
+            <article class="summary-card">
+              <div class="summary-card-icon">
+                <i class="bi bi-exclamation-circle"></i>
+              </div>
+              <p>Missing cells</p>
+              <h3 id="missingCount">—</h3>
+            </article>
+          </div>
+
+          <div class="col-6 col-xl-3">
+            <article class="summary-card">
+              <div class="summary-card-icon">
+                <i class="bi bi-hdd"></i>
+              </div>
+              <p>File size</p>
+              <h3 id="datasetSize">—</h3>
+            </article>
+          </div>
+
+        </div>
+
+        <!-- Column information -->
+        <div class="workspace-card mt-4">
+          <div class="workspace-card-heading">
+            <div>
+              <h2>Variable summary</h2>
+              <p>Detected data types and missing values for each column.</p>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table analysis-table align-middle">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Detected type</th>
+                  <th>Non-missing</th>
+                  <th>Missing</th>
+                </tr>
+              </thead>
+
+              <tbody id="columnSummaryBody">
+                <tr>
+                  <td colspan="4" class="text-center py-4">
+                    Upload a dataset to view its variables.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Data preview -->
+        <div class="workspace-card mt-4">
+          <div class="workspace-card-heading">
+            <div>
+              <h2>Data preview</h2>
+              <p>Review the first rows before choosing a statistical test.</p>
+            </div>
+
+            <span class="preview-label">First 10 rows</span>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table analysis-table align-middle">
+              <thead id="previewTableHead"></thead>
+              <tbody id="previewTableBody"></tbody>
+            </table>
+          </div>
+
+          <p id="previewNote" class="preview-note mb-0"></p>
+        </div>
+
+        <!-- Statistical test selection -->
+        <div class="workspace-card mt-4">
+          <div class="workspace-card-heading">
+            <div class="workspace-icon">
+              <i class="bi bi-calculator"></i>
+            </div>
+
+            <div>
+              <h2>Statistical tests</h2>
+              <p>
+                Choose a test based on your research question and variable types.
+              </p>
+            </div>
+          </div>
+
+          <div class="row g-3">
+
+            <div class="col-md-6">
+              <label for="testCategory" class="form-label">
+                Test category
+              </label>
+
+              <select id="testCategory" class="form-select">
+                <option value="">Choose a category</option>
+                <option value="means">Compare means</option>
+                <option value="nonparametric">Non-parametric tests</option>
+                <option value="correlation">Correlation</option>
+                <option value="categorical">Categorical association</option>
+                <option value="regression">Regression</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label for="statisticalTest" class="form-label">
+                Statistical test
+              </label>
+
+              <select id="statisticalTest" class="form-select" disabled>
+                <option value="">Select a category first</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label for="variableOne" class="form-label">
+                Variable 1
+              </label>
+
+              <select id="variableOne" class="form-select" disabled>
+                <option value="">Select a dataset first</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label for="variableTwo" class="form-label">
+                Variable 2
+              </label>
+
+              <select id="variableTwo" class="form-select" disabled>
+                <option value="">Select a dataset first</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="analysis-notice mt-4">
+            <i class="bi bi-info-circle"></i>
+            <p class="mb-0">
+              Dataset inspection runs in your browser. Statistical test
+              results require a connected analysis backend and appropriate
+              variable selection.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            id="runTestButton"
+            class="btn btn-brand mt-4"
+            disabled
+          >
+            <i class="bi bi-play-fill me-1"></i>
+            Run Statistical Test
+          </button>
+
+          <div id="testStatus" class="mt-3" aria-live="polite"></div>
+
+          <div id="testResults" class="test-results d-none mt-4">
+            <h3>Analysis results</h3>
+            <div id="testResultsContent"></div>
+          </div>
+        </div>
+
+      </section>
+
+      <div class="analysis-back-link">
+        <a href="index.html">
+          <i class="bi bi-arrow-left me-1"></i>
+          Back to MyNominee homepage
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+ 
+
+
+<footer class="site-footer" id="site-footer">
+  <div class="container">
+
+    <!-- Main footer -->
+    <div class="footer-main">
+
+      <!-- Brand column -->
+      <div class="footer-brand-column">
+        <a href="index.html" class="footer-brand-link"
+           aria-label="MyNomini.IN home">
+          <img src="images/logo.png"
+               alt=""
+               class="footer-logo">
+
+          <img src="images/mynominee-brand-text.svg"
+               alt="MyNomini.IN"
+               class="footer-brand-text">
+        </a>
+
+        <p class="footer-description">
+          Turn your data into meaningful insights with an
+          accessible workspace for statistical analysis.
+        </p>
+
+        
+      </div>
+
+      <!-- Navigation -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="analysis.html">Statistical Analysis</a></li>
+          <li><a href="index.html#about">About</a></li>
+        </ul>
+      </div>
+
+      <!-- Workspace -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Workspace</h3>
+        <ul class="footer-links">
+          <li><a href="analysis.html">Upload a dataset</a></li>
+          <li><a href="analysis.html#dataset-overview">Dataset overview</a></li>
+        </ul>
+      </div>
+
+      <!-- Project information -->
+      <div class="footer-column footer-info-column">
+        <h3 class="footer-heading">About this project</h3>
+        <p class="footer-info-text">
+          Designed to make dataset exploration and statistical
+          workflows easier to understand.
+        </p>
+        <a href="index.html#about" class="footer-text-link">
+          Learn more <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Capability notice -->
+    
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        © <span id="footerYear"></span> MyNomini.IN
+        <span class="footer-copyright-divider">·</span>
+        All rights reserved.
+      </p>
+
+      <a href="#top" class="footer-back-to-top">
+        Back to top <span aria-hidden="true">↑</span>
+      </a>
+    </div>
+
+  </div>
+</footer>
+
+
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  ></script>
+
+  <!-- XLSX parser for CSV and Excel files -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <script src="js/main.js"></script>
+  <script src="js/analysis.js"></script>
+
+</body>
+</html>
