@@ -5,74 +5,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>MyNominee.In | Caring Beyond Life</title>
-  <meta
-    name="description"
-    content="MyNominee helps families organize important financial information and nominee details."
-  >
+  <title>MyNomini.IN | Caring Beyond Life</title>
+  <meta name="description"
+        content="Understand unclaimed financial assets, discover where to begin, and help your family prepare for the future with MyNomini.IN.">
+  <meta name="theme-color" content="#123F4B">
 
-  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="icon" href="images/logo.png" type="image/png">
 
   <!-- Bootstrap -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
   <!-- Bootstrap Icons -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    rel="stylesheet"
-  >
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 
-<body>
+<body id="top">
 
-  <!-- Original loader asset -->
-  <div id="pageLoader" class="page-loader">
-    <div class="text-center">
-      <img
-        src="images/loader.gif"
-        alt="Loading MyNominee"
-        class="loader-image"
-      >
-      <p class="loader-caption">
-        <i class="bi bi-heart-fill"></i>
-        Caring Beyond Life...
-      </p>
-    </div>
-  </div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Navigation -->
 
-<nav class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top">
-  <div class="container">
+<!-- Header / Responsive Navigation -->
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg container" aria-label="Main navigation">
 
-    <!-- Brand -->
-    <a class="navbar-brand" href="index.html" aria-label="MyNomini home">
-      <img
-        src="images/logo.png"
-        alt=""
-        class="brand-logo"
-      />
-      <img
-        src="images/mynominee-brand-text.svg"
-        alt="MyNomini.IN"
-        class="brand-text"
-      />
+    <!-- Original MyNomini logo -->
+    <img src="images/logo.png" alt="" class="footer-logo" size="50" height="50">
+    <img
+    src="images/mynominee-brand-text.svg"
+    alt="MyNomini.IN — Caring Beyond Life"
+    height="18"
+  >
     </a>
 
-    <!-- Mobile toggle -->
+    <!-- Mobile menu button -->
     <button
       class="navbar-toggler"
       type="button"
@@ -80,172 +56,107 @@
       data-bs-target="#mainNavbar"
       aria-controls="mainNavbar"
       aria-expanded="false"
-      aria-label="Open navigation menu"
+      aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <!-- Navigation links -->
     <div class="collapse navbar-collapse" id="mainNavbar">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
+      <ul class="navbar-nav ms-lg-auto align-items-lg-center">
 
         <li class="nav-item">
-          <a class="nav-link"
-             href="index.html"
-             data-page="home">
-            Home
-          </a>
+          <a class="nav-link" href="#problem">The problem</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link"
-             href="analysis.html"
-             data-page="analysis">
-            Statistical Analysis
-          </a>
+          <a class="nav-link" href="#solution">Our solution</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link"
-             href="index.html#about"
-             data-page="about">
-            About
-          </a>
+          <a class="nav-link" href="#assets">Explore assets</a>
         </li>
 
-        <li class="nav-item nav-cta-item">
-          <a class="nav-cta" href="analysis.html">
-            Explore Analysis
-            <span aria-hidden="true">&rarr;</span>
+        <li class="nav-item">
+          <a class="nav-link" href="#resources">Resources</a>
+        </li>
+
+        <li class="nav-item nav-contact-item">
+          <a class="btn btn-brand btn-nav" href="#contact">
+            Contact us
           </a>
         </li>
 
       </ul>
     </div>
-  </div>
-</nav>
 
+  </nav>
+</header>
 
-  <main>
+  <main id="main">
 
-    <!-- Hero -->
-    <section class="hero-section">
-      <div class="hero-glow hero-glow-one"></div>
-      <div class="hero-glow hero-glow-two"></div>
-
-      <div class="container position-relative">
+    <!-- Hero / Problem statement -->
+    <section class="hero-section" id="problem">
+      <div class="container">
         <div class="row align-items-center g-5">
 
           <div class="col-lg-7">
+            <span class="eyebrow">
+              <i class="bi bi-heart-pulse" aria-hidden="true"></i>
+              Financial awareness. Family preparedness.
+            </span>
 
-            
-
-            <h1 class="hero-title">
-              Your family's future
-              <span>deserves clarity.</span>
+            <h1>
+              Your legacy should never be
+              <span>left undiscovered.</span>
             </h1>
 
             <p class="hero-description">
-              Important financial information should never become a mystery
-              for the people you love. MyNominee encourages families to
-              organize essential financial details and nominee information
-              with greater awareness and care.
+              Families can lose track of savings, insurance policies,
+              investments and other financial assets when records are
+              missing or loved ones do not know where to look.
             </p>
 
-            <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
-              <a href="#how-it-works" class="btn btn-brand btn-lg">
-                Discover MyNominee
-                <i class="bi bi-arrow-right ms-2"></i>
+            <p class="tagline">MyNomini.IN — Caring Beyond Life.</p>
+
+            <div class="hero-actions">
+              <a class="btn btn-brand btn-lg" href="#assets">
+                Explore unclaimed assets
+                <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
               </a>
 
-              <a href="analysis.html" class="btn btn-outline-brand btn-lg">
-                Open Analysis Workspace
+              <a class="btn btn-outline-brand btn-lg" href="#solution">
+                How we help
               </a>
             </div>
 
-            <div class="hero-trust-row mt-4">
-              <span>
-                <i class="bi bi-heart-fill"></i>
-                Family-first awareness
-              </span>
-              <span>
-                <i class="bi bi-shield-check"></i>
-                Privacy-conscious design
-              </span>
+            <div class="trust-note">
+              <i class="bi bi-info-circle" aria-hidden="true"></i>
+              Clear information to help families understand their next steps.
             </div>
-
           </div>
 
-          <!-- Hero visual -->
           <div class="col-lg-5">
-            <div class="hero-visual-card">
-
-              <div class="visual-topline">
-                <span class="visual-icon">
-                  <i class="bi bi-house-heart"></i>
-                </span>
-                
-                  
-                </span>
+            <div class="hero-card">
+              <div class="hero-card-icon">
+                <i class="bi bi-house-heart" aria-hidden="true"></i>
               </div>
 
-              <h2 class="visual-heading">
-                A little preparation.
-                <br>
-                A lasting difference.
-              </h2>
-
-              <p class="visual-description">
-                Help your loved ones understand where important information
-                belongs and why keeping it organized matters.
+              <p class="hero-card-label">A question worth asking</p>
+              <h2>Would your family know where to find your financial records?</h2>
+              <p>
+                Knowing what exists, where it is held and whom to contact
+                can make a difficult time easier to navigate.
               </p>
 
-              <div class="prepared-item">
-                <span class="prepared-icon">
-                  <i class="bi bi-bank"></i>
-                </span>
-                <span>
-                  <strong>Financial assets</strong>
-                  <small>Know what exists</small>
-                </span>
-                <i class="bi bi-check-circle-fill prepared-check"></i>
-              </div>
+              <a href="#solution" class="text-link">
+                See how to prepare
+                <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </a>
 
-              <div class="prepared-item">
-                <span class="prepared-icon">
-                  <i class="bi bi-people"></i>
-                </span>
-                <span>
-                  <strong>Nominee awareness</strong>
-                  <small>Know who is recorded</small>
-                </span>
-                <i class="bi bi-check-circle-fill prepared-check"></i>
+              <div class="hero-decoration" aria-hidden="true">
+                <i class="bi bi-shield-check"></i>
               </div>
-
-              <div class="prepared-item">
-                <span class="prepared-icon">
-                  <i class="bi bi-folder2-open"></i>
-                </span>
-                <span>
-                  <strong>Important records</strong>
-                  <small>Know where to find them</small>
-                </span>
-                <i class="bi bi-check-circle-fill prepared-check"></i>
-              </div>
-
-              <div class="visual-footer">
-                <i class="bi bi-heart-fill"></i>
-                Caring beyond a lifetime
-              </div>
-
-              <div class="floating-decoration decoration-one">
-                <i class="bi bi-stars"></i>
-              </div>
-
-              <div class="floating-decoration decoration-two">
-                <i class="bi bi-heart-fill"></i>
-              </div>
-
             </div>
           </div>
 
@@ -253,259 +164,394 @@
       </div>
     </section>
 
-    <!-- Why it matters -->
-    <section id="why-it-matters" class="section-padding">
+    <!-- Problem examples -->
+    <section class="section section-light" id="assets">
       <div class="container">
 
-        <div class="section-heading text-center mx-auto">
-          <span class="section-kicker">WHY IT MATTERS</span>
-          <h2>Preparedness is an act of care.</h2>
+        <div class="section-heading">
+          <span class="eyebrow">Understand the problem</span>
+          <h2>What could go unclaimed?</h2>
           <p>
-            Families can face avoidable confusion when essential financial
-            information is scattered, forgotten, or difficult to locate.
-            Awareness is a practical first step.
+            Financial assets may remain unclaimed when people forget about
+            them, records are lost, or families do not know they exist.
           </p>
         </div>
 
-        <div class="row g-4 mt-3">
+        <div class="row g-4">
 
-          <div class="col-md-4">
-            <article class="feature-card h-100">
-              <div class="feature-icon icon-teal">
-                <i class="bi bi-collection"></i>
+          <div class="col-sm-6 col-lg-3">
+            <article class="asset-card h-100">
+              <div class="asset-icon">
+                <i class="bi bi-bank" aria-hidden="true"></i>
               </div>
-              <h3>Bring information together</h3>
+              <h3>Bank deposits</h3>
               <p>
-                Understand which financial records and account details
-                your family may need to keep track of.
+                Savings accounts, fixed deposits and other bank balances.
               </p>
             </article>
           </div>
 
-          <div class="col-md-4">
-            <article class="feature-card h-100">
-              <div class="feature-icon icon-peach">
-                <i class="bi bi-person-check"></i>
+          <div class="col-sm-6 col-lg-3">
+            <article class="asset-card h-100">
+              <div class="asset-icon">
+                <i class="bi bi-shield-check" aria-hidden="true"></i>
               </div>
-              <h3>Understand nominee details</h3>
+              <h3>Insurance policies</h3>
               <p>
-                Encourage families to review nominee information and
-                understand the importance of keeping records current.
+                Policies or benefits that beneficiaries may not know about.
               </p>
             </article>
           </div>
 
-          <div class="col-md-4">
-            <article class="feature-card h-100">
-              <div class="feature-icon icon-lavender">
-                <i class="bi bi-chat-heart"></i>
+          <div class="col-sm-6 col-lg-3">
+            <article class="asset-card h-100">
+              <div class="asset-icon">
+                <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
               </div>
-              <h3>Start meaningful conversations</h3>
+              <h3>Investments</h3>
               <p>
-                Make financial preparedness easier to discuss with
-                the people who matter most.
+                Shares, dividends, mutual fund investments and related holdings.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <article class="asset-card h-100">
+              <div class="asset-icon">
+                <i class="bi bi-folder2-open" aria-hidden="true"></i>
+              </div>
+              <h3>Missing records</h3>
+              <p>
+                Financial documents or account details that are difficult
+                for family members to locate.
               </p>
             </article>
           </div>
 
         </div>
+
+        <div class="resource-banner mt-4">
+          <div>
+            <span class="resource-label">Looking for unclaimed assets?</span>
+            <h3>Start with the right information.</h3>
+            <p>
+              Learn about official resources and the institutions that
+              can help you understand the process.
+            </p>
+          </div>
+
+          <a class="btn btn-brand"
+             href="https://www.rbi.org.in/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Visit RBI website
+            <i class="bi bi-box-arrow-up-right ms-2" aria-hidden="true"></i>
+          </a>
+        </div>
+
       </div>
     </section>
+<!-- Official Resources -->
 
-    <!-- How it works -->
-    <section id="how-it-works" class="section-padding section-soft">
+<!-- Official Resources Section -->
+<section id="resources" class="resources-section section-padding">
+  <div class="container">
+    <div class="section-heading text-center">
+      <span class="section-eyebrow">TRUSTED INFORMATION</span>
+      <h2>Know where to look for unclaimed assets</h2>
+      <p>
+        Explore official resources to understand how to find
+        information about unclaimed financial assets in India.
+      </p>
+    </div>
+<div class="row g-4 mt-3">
+
+  <!-- Bank deposits -->
+  <div class="col-md-6 col-lg-3">
+    <article class="asset-card h-100">
+      <div class="asset-icon">
+        <i class="bi bi-bank" aria-hidden="true"></i>
+      </div>
+      <h3>Bank deposits</h3>
+      <p>
+        Learn about unclaimed bank deposits and the official
+        process for locating eligible deposits.
+      </p>
+      <a href="https://udgam.rbi.org.in/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="text-link">
+        Visit RBI UDGAM
+        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+      </a>
+    </article>
+  </div>
+
+  <!-- Insurance -->
+  <div class="col-md-6 col-lg-3">
+    <article class="asset-card h-100">
+      <div class="asset-icon">
+        <i class="bi bi-shield-check" aria-hidden="true"></i>
+      </div>
+      <h3>Insurance</h3>
+      <p>
+        Start with the relevant insurer to ask about policies,
+        benefits, eligibility and claim requirements.
+      </p>
+      <a href="https://irdai.gov.in/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="text-link">
+        Visit IRDAI
+        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+      </a>
+    </article>
+  </div>
+
+  <!-- Shares and dividends -->
+  <div class="col-md-6 col-lg-3">
+    <article class="asset-card h-100">
+      <div class="asset-icon">
+        <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
+      </div>
+      <h3>Shares and dividends</h3>
+      <p>
+        Find official information about unpaid dividends and
+        eligible shares transferred to the IEPF.
+      </p>
+      <a href="https://www.iepf.gov.in/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="text-link">
+        Visit IEPF
+        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+      </a>
+    </article>
+  </div>
+
+  <!-- Other assets -->
+  <div class="col-md-6 col-lg-3">
+    <article class="asset-card h-100">
+      <div class="asset-icon">
+        <i class="bi bi-folder2-open" aria-hidden="true"></i>
+      </div>
+      <h3>Other financial assets</h3>
+      <p>
+        Identify the institution that holds the asset and
+        confirm its official search and claim process.
+      </p>
+      <a href="https://www.india.gov.in/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="text-link">
+        Explore government services
+        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+      </a>
+    </article>
+  </div>
+</div>
+
+
+
+
+    <p class="text-center mt-4">
+      MyNomini.IN is an informational platform and does not guarantee
+      the recovery of any unclaimed asset.
+    </p>
+  </div>
+</section>
+
+
+    <!-- Solution -->
+    <section class="section solution-section" id="solution">
       <div class="container">
 
-        <div class="section-heading text-center mx-auto">
-          <span class="section-kicker">A SIMPLE START</span>
-          <h2>Make preparedness a habit.</h2>
+        <div class="section-heading">
+          <span class="eyebrow">The MyNomini approach</span>
+          <h2>Make the next step clearer.</h2>
           <p>
-            Start with awareness, identify what needs attention, and
-            build a clearer picture of your family's essential records.
+            We want to make financial awareness and family preparedness
+            easier to understand, one step at a time.
           </p>
         </div>
 
-        <div class="row g-4 mt-3">
+        <div class="row g-4">
 
           <div class="col-md-4">
-            <div class="step-card">
+            <article class="solution-card h-100">
               <span class="step-number">01</span>
+              <div class="solution-icon">
+                <i class="bi bi-search" aria-hidden="true"></i>
+              </div>
               <h3>Understand</h3>
               <p>
-                Identify the financial information and records your
-                family should know about.
+                Learn what kinds of financial assets may exist and why
+                some can remain unclaimed.
               </p>
-            </div>
+            </article>
           </div>
 
           <div class="col-md-4">
-            <div class="step-card">
+            <article class="solution-card h-100">
               <span class="step-number">02</span>
-              <h3>Organize</h3>
+              <div class="solution-icon">
+                <i class="bi bi-compass" aria-hidden="true"></i>
+              </div>
+              <h3>Find the next step</h3>
               <p>
-                Establish a clear way to keep track of relevant
-                documents and nominee details.
+                Identify relevant official resources and understand which
+                institution to contact.
               </p>
-            </div>
+            </article>
           </div>
 
           <div class="col-md-4">
-            <div class="step-card">
+            <article class="solution-card h-100">
               <span class="step-number">03</span>
-              <h3>Review</h3>
+              <div class="solution-icon">
+                <i class="bi bi-people" aria-hidden="true"></i>
+              </div>
+              <h3>Prepare together</h3>
               <p>
-                Revisit important details periodically and discuss
-                changes with your family.
+                Keep important financial information organized and help
+                your family understand where to begin.
               </p>
-            </div>
+            </article>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- Analysis entry -->
-    <section class="section-padding">
+    <!-- Practical examples -->
+    <section class="section section-light" id="examples">
       <div class="container">
-        <div class="analysis-banner">
-
-          <div>
-            <span class="section-kicker">STATISTICAL ANALYSIS</span>
-            <h2>Turn your dataset into meaningful insights.</h2>
+        <div class="example-panel">
+          <div class="example-content">
+            <span class="eyebrow">A simple example</span>
+            <h2>Imagine a family searching for a forgotten fixed deposit.</h2>
             <p>
-              Open the analysis workspace to inspect your data,
-              review data quality, and work with statistical tests.
+              A family discovers an old bank document but does not know
+              whether the deposit is still active or what paperwork is
+              required.
+            </p>
+            <p>
+              A sensible first step is to identify the bank, gather the
+              available documents and ask the bank about its official
+              verification and claim process.
             </p>
           </div>
 
-          <a href="analysis.html" class="btn btn-light btn-lg analysis-cta">
-            Open Workspace
-            <i class="bi bi-arrow-up-right ms-2"></i>
-          </a>
+          <div class="example-steps">
+            <div class="example-step">
+              <span><i class="bi bi-file-earmark-text" aria-hidden="true"></i></span>
+              <div>
+                <strong>Find the record</strong>
+                <p>Locate the old document or account details.</p>
+              </div>
+            </div>
 
+            <div class="example-step">
+              <span><i class="bi bi-building" aria-hidden="true"></i></span>
+              <div>
+                <strong>Contact the institution</strong>
+                <p>Confirm the account status and applicable procedure.</p>
+              </div>
+            </div>
+
+            <div class="example-step">
+              <span><i class="bi bi-clipboard-check" aria-hidden="true"></i></span>
+              <div>
+                <strong>Follow verified instructions</strong>
+                <p>Submit the required documents if eligible.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Vision -->
-    <section id="our-vision" class="section-padding vision-section">
-      <div class="container text-center">
+    <!-- Contact -->
+    <section class="section contact-section" id="contact">
 
-        <div class="vision-symbol">
-          <i class="bi bi-heart-fill"></i>
-        </div>
+<div class="container">
+  <div class="contact-panel">
+    <span class="section-eyebrow">CONTACT US</span>
 
-        <span class="section-kicker">OUR VISION</span>
+    <h2>Need help finding the right place to start?</h2>
 
-        <h2>
-          Caring for your family
-          <span>goes beyond a lifetime.</span>
-        </h2>
+    <p class="contact-description">
+      Understanding unclaimed financial assets can feel confusing.
+      Start with the relevant official resource, review its guidance,
+      and contact the concerned institution for claim-specific help.
+    </p>
 
-        <p class="vision-description mx-auto">
-          We envision a future where families are more informed,
-          important financial records are easier to understand,
-          and preparedness becomes a natural part of caring for one another.
-        </p>
+    <div class="contact-actions">
+      <a href="#resources" class="btn btn-brand">
+        Explore official resources
+      </a>
 
-        <a href="analysis.html" class="btn btn-brand mt-3">
-          Explore the Workspace
-          <i class="bi bi-arrow-right ms-2"></i>
-        </a>
+      <a href="#assets" class="btn btn-outline-brand">
+        Browse asset categories
+      </a>
+    </div>
 
-      </div>
+    <p class="contact-note">
+      MyNomini.IN provides general information and guidance.
+      Always verify claim requirements directly with the relevant
+      bank, insurer, regulator, or official authority.
+    </p>
+  </div>
+</div>
+
     </section>
 
   </main>
 
   <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
 
-
-<footer class="site-footer" id="site-footer">
-  <div class="container">
-
-    <!-- Main footer -->
-    <div class="footer-main">
-
-      <!-- Brand column -->
-      <div class="footer-brand-column">
-        <a href="index.html" class="footer-brand-link"
-           aria-label="MyNomini.IN home">
-          <img src="images/logo.png"
-               alt=""
-               class="footer-logo">
-
-          <img src="images/mynominee-brand-text.svg"
-               alt="MyNomini.IN"
-               class="footer-brand-text">
+      <div class="footer-main">
+        <a class="footer-brand" href="#top">
+          <img src="images/logo.png" alt="" class="footer-logo">
+          <span>
+             <img
+    src="images/mynominee-brand-text.svg"
+    alt="MyNomini.IN — Caring Beyond Life"
+    height="18"
+  >
+            <small>Caring Beyond Life</small>
+          </span>
         </a>
 
-        <p class="footer-description">
-          Turn your data into meaningful insights with an
-          accessible workspace for statistical analysis.
+        <p>
+          Helping families understand unclaimed assets and prepare for
+          the future with greater clarity.
         </p>
 
-        
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#problem">The problem</a>
+          <a href="#solution">Our solution</a>
+          <a href="#assets">Explore assets</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
 
-      <!-- Navigation -->
-      <div class="footer-column">
-        <h3 class="footer-heading">Navigation</h3>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="analysis.html">Statistical Analysis</a></li>
-          <li><a href="index.html#about">About</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <p>© <span id="footerYear"></span> MyNomini.IN. All rights reserved.</p>
+        <a href="#top">Back to top ↑</a>
       </div>
 
-      <!-- Workspace -->
-      <div class="footer-column">
-        <h3 class="footer-heading">Workspace</h3>
-        <ul class="footer-links">
-          <li><a href="analysis.html">Upload a dataset</a></li>
-          <li><a href="analysis.html#dataset-overview">Dataset overview</a></li>
-        </ul>
-      </div>
-
-      <!-- Project information -->
-      <div class="footer-column footer-info-column">
-        <h3 class="footer-heading">About this project</h3>
-        <p class="footer-info-text">
-          Designed to make dataset exploration and statistical
-          workflows easier to understand.
-        </p>
-        <a href="index.html#about" class="footer-text-link">
-          Learn more <span aria-hidden="true">→</span>
-        </a>
-      </div>
-
-    </div>
-
-    <!-- Capability notice -->
-   
-
-    <!-- Bottom bar -->
-    <div class="footer-bottom">
-      <p class="footer-copyright">
-        © <span id="footerYear"></span> MyNomini.IN
-        <span class="footer-copyright-divider">·</span>
-        All rights reserved.
+      <p class="footer-disclaimer">
+        MyNomini provides informational guidance. It does not guarantee
+        asset discovery, eligibility or claim approval. Always verify
+        requirements with the relevant institution.
       </p>
 
-      <a href="#top" class="footer-back-to-top">
-        Back to top <span aria-hidden="true">↑</span>
-      </a>
     </div>
+  </footer>
 
-  </div>
-</footer>
-
-
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-  ></script>
-
-  <script src="js/main.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,132 +1,119 @@
 
+/* =====================================================
+   MyNomini.IN — Main JavaScript
+   Guest website interactions
+===================================================== */
+
 "use strict";
 
-/* =========================================
-   MyNominee.In — Main JavaScript
-   File: js/main.js
-   ========================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
-  initializeLoader();
-  initializeNavbar();
-  initializeCopyrightYear();
-  initializeSmoothNavigation();
+  initializeFooterYear();
+  initializeMobileNavigation();
+  initializeActiveNavigation();
+  initializeAssetLinks();
 });
 
-const currentPage = window.location.pathname
-  .split("/")
-  .pop()
-  .toLowerCase();
+/* Automatically update the copyright year */
+function initializeFooterYear() {
+  const yearElement = document.getElementById("footerYear");
 
-document.querySelectorAll(".site-navbar .nav-link").forEach((link) => {
-  const page = link.dataset.page;
-
-  const isActive =
-    (page === "home" && (currentPage === "" || currentPage === "index.html")) ||
-    (page === "analysis" && currentPage === "analysis.html");
-
-  link.classList.toggle("active", isActive);
-
-  if (isActive) {
-    link.setAttribute("aria-current", "page");
-  } else {
-    link.removeAttribute("aria-current");
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
   }
-});
-
-const footerYear = document.getElementById("footerYear");
-
-if (footerYear) {
-  footerYear.textContent = new Date().getFullYear();
 }
 
+/* Bootstrap mobile navigation */
+function initializeMobileNavigation() {
+  const navbarElement = document.getElementById("mainNavbar");
 
-/* ---------- 1. Page loader ---------- */
-
-function initializeLoader() {
-  const loader = document.getElementById("pageLoader");
-
-  if (!loader) return;
-
-  let loaderHidden = false;
-
-  function hideLoader() {
-    if (loaderHidden) return;
-
-    loaderHidden = true;
-    loader.classList.add("is-hidden");
-
-    // Remove it from keyboard and screen-reader navigation
-    // after the fade-out animation.
-    window.setTimeout(() => {
-      loader.style.display = "none";
-    }, 500);
+  if (!navbarElement || typeof bootstrap === "undefined") {
+    return;
   }
 
-  // Allow the page to finish rendering before hiding the loader.
-  if (document.readyState === "complete") {
-    window.setTimeout(hideLoader, 250);
-  } else {
-    window.addEventListener("load", () => {
-      window.setTimeout(hideLoader, 250);
-    }, { once: true });
-  }
+  const collapse = bootstrap.Collapse.getOrCreateInstance(
+    navbarElement,
+    { toggle: false }
+  );
 
-  // Safety fallback in case a resource loads very slowly.
-  window.setTimeout(hideLoader, 4000);
-}
-
-/* ---------- 2. Navbar scroll effect ---------- */
-
-function initializeNavbar() {
-  const navbar = document.querySelector(".site-navbar");
-
-  if (!navbar) return;
-
-  function updateNavbar() {
-    navbar.classList.toggle("navbar-scrolled", window.scrollY > 20);
-  }
-
-  updateNavbar();
-
-  window.addEventListener("scroll", updateNavbar, {
-    passive: true
+  navbarElement.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth < 992) {
+        collapse.hide();
+      }
+    });
   });
 }
 
-/* ---------- 3. Dynamic copyright year ---------- */
-
-function initializeCopyrightYear() {
-  const yearElement = document.getElementById("currentYear");
-
-  if (!yearElement) return;
-
-  yearElement.textContent = new Date().getFullYear();
-}
-
-/* ---------- 4. Smooth anchor navigation ---------- */
-
-function initializeSmoothNavigation() {
-  const navigationLinks = document.querySelectorAll(
-    '.site-navbar a[href^="#"]'
+/* Highlight the navigation item for the visible section */
+function initializeActiveNavigation() {
+  const navLinks = document.querySelectorAll(
+    '.site-header .nav-link[href^="#"]'
   );
 
-  navigationLinks.forEach((link) => {
+  const sections = Array.from(navLinks)
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+
+  if (!navLinks.length || !sections.length) {
+    return;
+  }
+
+  function updateActiveLink() {
+    let currentSection = sections[0];
+
+    sections.forEach((section) => {
+      if (section.getBoundingClientRect().top <= 140) {
+        currentSection = section;
+      }
+    });
+
+    navLinks.forEach((link) => {
+      const isActive =
+        link.getAttribute("href") === `#${currentSection.id}`;
+
+      link.classList.toggle("active", isActive);
+
+      if (isActive) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveLink, {
+    passive: true
+  });
+
+  updateActiveLink();
+}
+
+/* Make sure external asset links open safely */
+function initializeAssetLinks() {
+  document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+    link.setAttribute("rel", "noopener noreferrer");
+  });
+}
+
+function initializeMobileNavigation() {
+  const navbar = document.getElementById("mainNavbar");
+
+  if (!navbar || typeof bootstrap === "undefined") {
+    return;
+  }
+
+  const navLinks = navbar.querySelectorAll('a[href^="#"]');
+
+  navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      const navbarCollapse = document.getElementById("mainNavigation");
+      if (!window.matchMedia("(max-width: 991.98px)").matches) {
+        return;
+      }
 
-      // Close Bootstrap's mobile navigation after selecting a section.
-      if (
-        navbarCollapse &&
-        navbarCollapse.classList.contains("show") &&
-        window.bootstrap
-      ) {
-        const collapseInstance =
-          window.bootstrap.Collapse.getInstance(navbarCollapse);
+      const collapse = bootstrap.Collapse.getInstance(navbar);
 
-        if (collapseInstance) {
-          collapseInstance.hide();
-        }
+      if (collapse && navbar.classList.contains("show")) {
+        collapse.hide();
       }
     });
   });
